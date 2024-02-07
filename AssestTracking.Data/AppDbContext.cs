@@ -1,4 +1,5 @@
 ﻿using AssestTracking.Data.Models;
+using AssetTracking.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,22 @@ namespace AssetTracking.Data
         {
 
         }
-        public DbSet<Asset> Assets { get; set; }
+        public DbSet<Asset> tAssetTag { get; set; }
+        public DbSet<Employee> tEmployeeTag { get; set; }
+        public DbSet<FloorMaster> mFloorMaster { get; set; }
+        public DbSet<GroupMaster> mGroupMaster { get; set; }
+        public DbSet<Organization> OrgInfo { get; set; }
+        public DbSet<RoomMaster> mRoomMaster { get; set; }
+        public DbSet<SiteMaster> mSiteMaster { get; set; }
+        public DbSet<StatusMaster> mStatusMaster { get; set; }
+        public DbSet<TeamMaster> mIteamMaster { get; set; }
+        public DbSet<TeamTypeMaster> mIteamTypeMaster { get; set; }
+        public DbSet<UnitMaster> mUnitMaster { get; set; }
+        public DbSet<Vendor> mVendor { get; set; }
+        public DbSet<Zone> mZone { get; set; }
+       
+
         // Add other DbSets as needed
+
     }
 }
