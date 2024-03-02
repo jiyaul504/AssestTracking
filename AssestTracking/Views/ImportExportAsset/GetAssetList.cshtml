@@ -1,0 +1,60 @@
+﻿@using AssetTracking.Data.Models
+@model IEnumerable<ImportExportAsset>
+
+@{
+    ViewData["Title"] = "AssetList";
+}
+
+<link href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+<div class="container">
+    <div class="table-responsive">
+        <table id="AssetTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>mIteamMasterId</th>
+                    <th>IteamName</th>
+                    <th>IteamCode</th>
+                    <th>IteamDescription</th>
+                    <th>UID</th>
+                    <th>RFID</th>
+                    <th>BarCode</th>
+                    <th>SerialNo</th>
+                    <th>Model</th>
+                    <th>Stock</th>
+                    <th>bStock</th>
+                    <th>mIteamTypeMasterId</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#AssetTable').DataTable({
+                ajax: {
+                    url: "../ImportExportAsset/AssetList",
+                    type: "POST",
+                },
+                processing: true,
+                serverSide: true,
+                columns: [
+                    { data: "mIteamMasterId", name: "mIteamMasterId" },
+                    { data: "IteamName", name: "IteamName" },
+                    { data: "IteamCode", name: "IteamCode" },
+                    { data: "IteamDescription", name: "IteamDescription" },
+                    { data: "UID", name: "UID" },
+                    { data: "RFID", name: "RFID" },
+                    { data: "BarCode", name: "BarCode" },
+                    { data: "SerialNo", name: "SerialNo" },
+                    { data: "Model", name: "Model" },
+                    { data: "Stock", name: "Stock" },
+                    { data: "bStock", name: "bStock" },
+                    { data: "mIteamTypeMasterId", name: "mIteamTypeMasterId" }
+                ]
+            });
+        });
+    </script>
+}
